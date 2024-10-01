@@ -2,6 +2,10 @@
 include 'koneksi.php';
 
 $kendaraan = $conn->query("SELECT * FROM kendaraan");
+if ($kendaraan->num_rows == 0) {
+    echo "<p>Tidak ada data kendaraan.</p>";
+}
+
 
 ?>
 

@@ -6,9 +6,10 @@ if ($conn->connect_error) {
 }else{
     echo "Connection established successfully<br>";
 }
-
+    
 if (isset($_GET['id'])) {
     $barang_id = $_GET['id'];
+    
 
     // Cek apakah barang sudah dibayar sebelumnya
 
@@ -34,9 +35,10 @@ if (isset($_GET['id'])) {
         $stmt->close();
     }
 } else {
-    echo "Barang tidak ditemukan.";
+    echo "Barang tidak ditemukan. <br> lanjut nanti";
+
 }
-var_dump($barang);
+
 
 $conn->close();
 ?>
