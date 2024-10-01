@@ -6,7 +6,7 @@ if ($conn->connect_error) {
 }
 
 $barang = $conn->query("
-    SELECT b.id, wp.nama AS pemilik, b.nama_barang, b.kategori, b.nilai_barang, b.pajak, b.status_pajak
+    SELECT b.id, wp.nama AS pemilik, b.nama_barang, b.kategori, b.nilai_barang, b.pajak
     FROM barang b
     JOIN wajib_pajak wp ON b.wajib_pajak_id = wp.id
 ");
@@ -42,9 +42,9 @@ $conn->close();
             <td><?= $row['kategori'] ?></td>
             <td><?= number_format($row['nilai_barang'], 2, ',', '.') ?></td>
             <td><?= number_format($row['pajak'], 2, ',', '.') ?></td>
-            <td><?= $row['status_pajak'] ?></td>
+            <td><!--$row['status_pajak']--> Dump </td>
             <td>
-                <?php if ($row['status_pajak'] === 'belum_bayar'): ?>
+                <?php if ( 'dump' === 'belum_bayar'): ?>
                     <a href="bayar_pajak.php?id=<?= $row['id'] ?>">Bayar Pajak</a>
                 <?php else: ?>
                     Sudah Dibayar
