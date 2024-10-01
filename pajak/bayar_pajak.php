@@ -2,7 +2,7 @@
 $conn = new mysqli('localhost', 'root', '', 'db_pajak');
 
 if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+    die("Connection failedrrrrrrr: " . $conn->connect_error);
 }else{
     echo "Connection established successfully<br>";
 }
