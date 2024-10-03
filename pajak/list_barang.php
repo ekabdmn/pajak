@@ -25,7 +25,7 @@ $conn->close();
     <h1>Data Barang dan Pajak dan hhh</h1>
     <table border="1">
         <tr>
-            <th>ID</th>
+            <th>di</th>
             <th>Pemilik</th>
             <th>Nama Barang</th>
             <th>Kategori</th>
