@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 01, 2024 at 08:43 AM
+-- Generation Time: Oct 07, 2024 at 03:56 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -53,11 +53,42 @@ INSERT INTO `barang` (`id`, `wajib_pajak_id`, `nama_barang`, `kategori`, `nilai_
 CREATE TABLE `kendaraan` (
   `id` int(11) NOT NULL,
   `no_plat` varchar(20) NOT NULL,
-  `merk` varchar(50) DEFAULT NULL,
+  `merk` varchar(50) NOT NULL,
   `tipe` varchar(50) DEFAULT NULL,
   `tahun_pembuatan` int(11) DEFAULT NULL,
-  `pemilik` varchar(100) DEFAULT NULL
+  `pemakai` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `kendaraan`
+--
+
+INSERT INTO `kendaraan` (`id`, `no_plat`, `merk`, `tipe`, `tahun_pembuatan`, `pemakai`) VALUES
+(24, '88uu', 'yamalube', 'matic', 2020, 'slamet'),
+(25, 'RU9990AB', 'honda', 'Mobil', 2016, 'Pak Anji'),
+(26, 'BE5567AI', 'honda', 'Motor', 2017, 'Sandi');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL,
+  `nama` varchar(150) NOT NULL,
+  `username` varchar(25) NOT NULL,
+  `password` varchar(150) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id`, `nama`, `username`, `password`) VALUES
+(2, 'admin@gmail.com', 'admin', '$2y$10$hVSvpLYAyirFtJDvLB0rLeOTXwf7zhqMRb7GxtfXs4TFOwKeWUcZe'),
+(3, 'aa', 'aaa', '$2y$10$CH2f9dKwTNqeYv1SJP2gIuBMkLheY.HbJ8BkjZ3JgmX5BfCBjphsC'),
+(4, 'aa', 'aa', '$2y$10$./JuC3V7EoJ2dYnRx9HQzuzSVbZxnbq1IFILOdAr4JSRg2Vgn5jpq');
 
 -- --------------------------------------------------------
 
@@ -98,6 +129,13 @@ ALTER TABLE `kendaraan`
   ADD UNIQUE KEY `no_plat` (`no_plat`);
 
 --
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `username` (`username`);
+
+--
 -- Indexes for table `wajib_pajak`
 --
 ALTER TABLE `wajib_pajak`
@@ -117,7 +155,13 @@ ALTER TABLE `barang`
 -- AUTO_INCREMENT for table `kendaraan`
 --
 ALTER TABLE `kendaraan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `wajib_pajak`
