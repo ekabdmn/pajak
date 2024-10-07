@@ -17,7 +17,7 @@ if (isset($_GET['id'])) {
 
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $tanggal_bayar = $_POST['tanggal_bayar'];
+        $tanggal_bayar = $_POST['tanggal_bayar'];//aa
         $jumlah_pajak = $barang['pajak'];
 
         // Insert ke tabel pembayaran
