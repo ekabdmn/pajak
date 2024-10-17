@@ -2,6 +2,8 @@
 include "./function/koneksi.php";
 
 $query = mysqli_query($conn, "SELECT * FROM kendaraan");
+
+
 ?>
 <div class="page-heading">
     <div class="page-title">
@@ -16,7 +18,7 @@ $query = mysqli_query($conn, "SELECT * FROM kendaraan");
                 <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item">
-                            <a href="index.php?halaman=kontak">Kendaraan</a>
+                            <a href="index.php?halaman=kontak">Dashboard</a>
                         </li>
                         <li class="breadcrumb-item active" aria-current="page">
                             Lihat Data Kendaraan
@@ -32,7 +34,7 @@ $query = mysqli_query($conn, "SELECT * FROM kendaraan");
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table table-bordered" id="table">
-                        <thead>
+                        <thead class="table-light">
                             <tr>
                                 <th>#</th>
                                 <th>Plat Nomor</th>
