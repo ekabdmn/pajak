@@ -107,7 +107,7 @@ try {
                         <?php if ($count > 0) : ?>
                             <?php $i = 1; ?>
                             <?php while ($data = $query->fetch_assoc()) : ?>
-                                <tr>
+                                <tr onclick="window.location='https://example.com/profile/1'">
                                     <td><?= $i++ ?></td>
                                     <td><?= htmlspecialchars($data['nama_peminjam']) ?></td>
                                     <td><?= htmlspecialchars($data['no_telepon']) ?></td>
